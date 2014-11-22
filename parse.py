@@ -32,7 +32,12 @@ for dir_name in glob('data/pelican-themes/*/'):
     dir_name = os.path.basename(os.path.split(dir_name)[0])
     images[dir_name] = set()
 
-for png in glob('data/pelican-themes/*/*.png'):
+for png in (glob('data/pelican-themes/*/*.png')
+            + glob('data/pelican-themes/*/*.gif')
+            + glob('data/pelican-themes/*/*.jpg')
+            + glob('data/pelican-themes/*/*.jpeg')
+            + glob('data/pelican-themes/*/screenshots/*.png')
+            ):
     dir_name = os.path.basename(os.path.split(png)[0])
     images[dir_name].add(png)
 
