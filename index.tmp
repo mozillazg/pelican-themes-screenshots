@@ -42,9 +42,10 @@
 
     <div class="title">
       <h1>Pelican Themes</h1>
-      <span>A website that displays screenshots of the
+      <p>A website that displays screenshots of the
         <a href="https://github.com/getpelican/pelican-themes">Pelican Themes</a>.
-      </span>
+      </p>
+      <p>Last updated: {{ now }}</p>
     </div>
 
       {% for name, theme in themes.items() %}

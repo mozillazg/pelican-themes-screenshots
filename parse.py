@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from collections import defaultdict
+from datetime import datetime
 from glob import glob
 import json
 import os
@@ -70,6 +71,6 @@ for key, value in themes.items():
 
 print len(themes)
 with open(index_tmp) as f:
-    html = Template(f.read()).render(themes=themes)
+    html = Template(f.read()).render(themes=themes, now=datetime.now())
     with open(index_html, 'w') as f2:
         f2.write(html)
