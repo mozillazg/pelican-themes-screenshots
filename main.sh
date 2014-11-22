@@ -46,7 +46,8 @@ function fix_git_repo() {
     rm tempfile
 }
 
-# clone_themes
-# fix_git_repo
+clone_themes
+fix_git_repo
 # clone_extra_themes
+cd $current_dir
 python parse.py
