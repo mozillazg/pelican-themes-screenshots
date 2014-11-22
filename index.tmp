@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Pelican Themes</title>
+    <meta name="description" content="A website that displays screenshots of the Pelican Themes.">
+    <style>
+      .themes {
+        margin: 20px auto;
+        text-align: center;
+        max-width: 70%;
+        margin-right: 250px;
+      }
+      .themes img {
+        max-width: 98%;
+        margin: auto;
+      }
+      .toc {
+        margin: 10px 0 5px;
+        height: 90%;
+        right: 10px;
+        background-color: #eee;
+        z-index: 9999;
+        position: fixed;
+        overflow-y: scroll;
+      }
+    </style>
+  </head>
+  <body>
+<a href="https://github.com/mozillazg/pelican-themes-screenshots"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+
+    <div class="toc">
+      <ul>
+        {% for name, theme in themes.items() %}
+        <li><a href="#{{ name }}">{{ theme.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="themes">
+
+    <div class="title">
+      <h1>Pelican Themes</h1>
+      <span>A website that displays screenshots of the
+        <a href="https://github.com/getpelican/pelican-themes">Pelican Themes</a>.
+      </span>
+    </div>
+
+      {% for name, theme in themes.items() %}
+      <div class="theme">
+        <h2 id="{{ name }}"><a href="{{ theme.url }}">{{ theme.name }}</a></h2>
+        {% for screenshot in theme.screenshots %}
+          <img src="{{ screenshot }}" alt={{ theme.name }} ><br >
+        {% else %}
+          <span>This theme no screenshot.</span>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
