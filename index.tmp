@@ -6,6 +6,9 @@
     <title>Pelican Themes</title>
     <meta name="description" content="A website that displays screenshots of the Pelican Themes.">
     <style>
+      body {
+        background-color: #eee;
+      }
       .themes {
         margin: 20px auto;
         text-align: center;
@@ -15,6 +18,13 @@
       .themes img {
         max-width: 98%;
         margin: auto;
+      }
+      .title {
+        margin-bottom: 10px;
+      }
+      .theme h2{
+        background-color: #fff462;
+        padding: 5px;
       }
       .toc {
         margin: 10px 0 5px;
