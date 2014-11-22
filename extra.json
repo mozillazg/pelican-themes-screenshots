@@ -1,0 +1,20 @@
+{
+    "pelican-octopress-theme": {
+        "name": "pelican-octopress-theme",
+        "url": "https://github.com/duilio/pelican-octopress-theme/",
+        "screenshots": []
+    },
+    "pure": {
+        "name": "pure",
+        "url": "https://github.com/PurePelicanTheme/pure",
+        "screenshots": ["https://camo.githubusercontent.com/bfbaf7f07ffc49f3af08e2e320d531f76fedeebf/687474703a2f2f692e696d6775722e636f6d2f6c71434a5672462e706e67",
+            "https://camo.githubusercontent.com/010baddc4c126cffee449e14be84f7e4da37a436/687474703a2f2f692e696d6775722e636f6d2f6543557379476b2e706e67",
+            "https://camo.githubusercontent.com/36e54795d5d73ed3f6d3f693ef5532281049d4cd/687474703a2f2f692e696d6775722e636f6d2f526b59784d496c2e706e67"
+        ]
+    },
+    "pure-single": {
+        "name": "pure-single",
+        "url": "https://github.com/PurePelicanTheme/pure-single",
+        "screenshots": []
+    }
+}
