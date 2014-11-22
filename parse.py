@@ -5,6 +5,7 @@ from collections import defaultdict
 from glob import glob
 import json
 import os
+import re
 
 from git.config import GitConfigParser
 from jinja2 import Template
@@ -54,6 +55,13 @@ for key, value in images.iteritems():
 
 with open(extra_json) as f:
     themes.update(json.loads(f.read()))
+for key, value in themes.items():
+    url = value['url'].rstrip('.git')
+    if url.startswith('git://'):
+        url = 'https://' + url.split('git://')[1]
+    elif url.startswith('git@'):
+        url = re.sub(r'git@([^:]+):([^/]+)/(.+)', r'https://\1/\2/\3', url)
+    themes[key]['url'] = url
 
 print len(themes)
 with open(index_tmp) as f:
