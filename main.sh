@@ -7,10 +7,7 @@ extra_repos='https://github.com/duilio/pelican-octopress-theme/'
 function clone_themes() {
     rm -rf $current_dir/public/data/*/
     cd $current_dir/public/data
-    git clone git://github.com/getpelican/pelican-themes --depth=1
-    git submodule sync
-    git submodule init
-    git submodule update
+    git clone --depth=1 --recursive git://github.com/getpelican/pelican-themes
 }
 
 function clone_extra_themes() {
@@ -34,12 +31,6 @@ function fix_git_repo() {
         url=$(git config -f .gitmodules --get "$url_key")
 
         rm -rf $path; git submodule add $url $path; echo "$path has been initialized"
-        # read -p "Are you sure you want to delete $path and re-initialize as a new submodule? " yn
-        # case $yn in
-        #     [Yy]* ) rm -rf $path; git submodule add $url $path; echo "$path has been initialized";;
-        #     [Nn]* ) exit;;
-        #     * ) echo "Please answer yes or no.";;
-        # esac
 
     done 3<tempfile
 
